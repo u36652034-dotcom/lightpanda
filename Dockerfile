@@ -7,4 +7,4 @@ RUN curl --fail -L --retry 3 -o /bin/lightpanda \
     chmod +x /bin/lightpanda
 EXPOSE 9222
 ENTRYPOINT ["/usr/bin/tini", "--"]
-CMD ["sh", "-c", "/bin/lightpanda mcp --host 0.0.0.0 --port ${PORT:-9222}"]
+CMD ["sh", "-c", "/bin/lightpanda serve --host 0.0.0.0 --port ${PORT:-9222} --advertise-host lightpanda-905n.onrender.com --log-level info"]
